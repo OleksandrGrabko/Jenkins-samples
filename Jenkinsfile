@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 git([url: 'https://github.com/OleksandrGrabko/testrepo.git', branch: 'master'])
-                
+
                 echo 'Building..'
             }
         }
