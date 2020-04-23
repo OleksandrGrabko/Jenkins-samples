@@ -1,4 +1,4 @@
-ipeline {
+pipeline {
    agent none
 
    stages {
@@ -9,7 +9,7 @@ ipeline {
       }
       stage('Git clone master branch') {
          steps {
-            git 'https://github.com//.git'
+            git([url: 'https://github.com/OleksandrGrabko/testrepo.git', branch: 'master'])
          }
       }
       stage('Run master docker container nginx') {

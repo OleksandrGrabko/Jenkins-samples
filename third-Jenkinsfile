@@ -1,0 +1,17 @@
+pipeline {
+   agent none
+
+   stages {
+      stage('Hello stage') {
+         steps {
+            echo 'Hello World'
+         }
+      }
+      stage('Git clone master branch') {
+         steps {
+            git([url: 'https://github.com/OleksandrGrabko/testrepo.git', branch: 'master'])
+         }
+      }
+      }
+   }
+}
