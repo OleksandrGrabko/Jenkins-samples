@@ -20,9 +20,9 @@ pipeline {
         sh 'git status'
         sh 'git config --global user.email "jenkins@elaterial.com"'
         sh 'git config --global user.name "Jenkins Doe"'
-        sh "git commit -am 'update from Jenkins'"
-        sh "git push --set-upstream origin master"
-        sh "echo 'git push'"
+        sh 'git commit -am "update from Jenkins"'
+        sh 'git push --set-upstream origin master'
+        sh 'echo 'git push done"'
         }
       }
     }
