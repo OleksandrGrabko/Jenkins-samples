@@ -16,6 +16,7 @@ pipeline {
           sh "cp \$SSHKEY ~/.ssh/id_rsa"
           sh "chmod +400 ~/.ssh/id_rsa"
         }
+        sh 'git remote -v'
         sh "touch build=$BUILD_NUMBER"
         sh 'git add .'
         sh 'git status'
