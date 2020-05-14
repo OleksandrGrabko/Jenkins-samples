@@ -16,6 +16,7 @@ pipeline {
           sh "cp \$SSHKEY ~/.ssh/id_rsa"
           sh "chmod +400 ~/.ssh/id_rsa"
         }
+        sh "touch build=$BUILD_NUMBER"
         sh 'git add .'
         sh 'git status'
         sh 'git config --global user.email "jenkins@elaterial.com"'
