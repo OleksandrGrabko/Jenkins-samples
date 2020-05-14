@@ -1,19 +1,4 @@
-gitRepoName = ""
-gitRepoUrl = ""
-netlifyID = "netlify"
 gitCredentialsId = "deploykey"
-slackChanel = "#release"
-slackSecretId = "slack"
-gitOrganization = "ElateralLtd"
-netlify_accountId = "2e7f3f0b-b70c-4d83-b3dc-87e96a75517b"
-def newenvpath = ""
-def oldenvpath = ""
-def toolspath = ""
-def oldVersion=""
-def oldBuild = ""
-def newVersion = ""
-def newBuild = ""
-dryRun = ""
 
 pipeline {
   agent any
