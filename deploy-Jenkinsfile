@@ -9,5 +9,21 @@ pipeline {
           echo 'Building..'
         }
       }
+      stage ('Commit to git all changes'){
+        steps {
+        withCredentials([file(credentialsId: 'sshkey', variable: 'SSHKEY')]) {
+          sh "if [ -d ~/.ssh ]; then sleep 1; else mkdir -m 755 ~/.ssh; fi"
+          sh "cp \$SSHKEY ~/.ssh/id_rsa"
+          sh "chmod +400 ~/.ssh/id_rsa"
+        }
+        sh 'git add .'
+        sh 'git status'
+        sh 'git config --global user.email "jenkins@elaterial.com"'
+        sh 'git config --global user.name "Jenkins Doe"'
+        sh "git commit -am 'update from Jenkins'"
+        sh "git push --set-upstream origin master"
+        sh "echo 'git push'"
+        }
+      }
     }
 }
