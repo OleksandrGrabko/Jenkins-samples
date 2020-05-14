@@ -20,7 +20,7 @@ pipeline {
     stages {
       stage('Build from SCM') {
         steps {
-          git([url: 'https://github.com/OleksandrGrabko/testrepo.git', branch: 'master'", credentialsId: gitCredentialsId])
+          git([url: 'https://github.com/OleksandrGrabko/testrepo.git', branch: 'master', credentialsId: gitCredentialsId])
           echo 'Building..'
         }
       }
