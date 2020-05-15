@@ -23,6 +23,7 @@ pipeline {
         sh "git config --global user.name 'Jenkins Doe'"
         sh "git commit -am 'update from Jenkins'"
         sh 'git config -l'
+        sh 'sleep 20m'
         sh 'git push --set-upstream origin master'
         sh 'echo "git push done"'
         }
