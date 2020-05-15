@@ -1,3 +1,4 @@
+// id from Jenkins secrets
 gitCredentialsId = "deploykey"
 
 pipeline {
@@ -11,6 +12,7 @@ pipeline {
       }
       stage ('Commit to git all changes'){
         steps {
+        // other secret id from Jenkins secrets
         withCredentials([file(credentialsId: 'sshkey', variable: 'SSHKEY')]) {
           sh "if [ -d ~/.ssh ]; then sleep 1; else mkdir -m 755 ~/.ssh; fi"
           sh "cp \$SSHKEY ~/.ssh/id_rsa"
@@ -19,8 +21,8 @@ pipeline {
         sh "touch build=$BUILD_NUMBER"
         sh 'git add .'
         sh 'git status'
-        sh "git config --global user.email 'jenkins@elaterial.com'"
-        sh "git config --global user.name 'Jenkins Doe'"
+        sh "git config --global user.email 'jenkins@some.com'"
+        sh "git config --global user.name 'Jenkins D'"
         sh "git commit -am 'update from Jenkins'"
         sh 'git config -l'
         sh 'sleep 20m'
